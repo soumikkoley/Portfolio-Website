@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Soumik Koley</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="{{ url_for('static', filename='images/logo.png.jpg') }}" class="logo">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <!-- <li><a href="#">Services</a></li> -->
+                    <li><a href="{{ url_for('projects') }}">Project</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>About <span>Me</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="{{ url_for('static', filename='images/user.png.jpg') }}">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Who am I?</h1>
+                <p>
+                    I'm <strong>Soumik Koley</strong>, a passionate and detail-oriented Computer Science graduate from Kolkata. 
+                    I specialize in crafting beautiful and functional digital experiences through UI/UX design, web development, and application development.
+                    <br><br>
+                    With a strong foundation in Java, HTML, CSS, JavaScript, and API development, I thrive in dynamic, team-based environments where 
+                    I can build and scale innovative projects. I’m also proficient in Python and Linux, and enjoy integrating AI tools into my workflow 
+                    to improve efficiency and productivity.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('tools')">Tools</p>
+                    <p class="tab-links" onclick="opentab('interests')">Interests</p>
+                </div>
+
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing user-centric interfaces</li>
+                        <li><span>Web Development</span><br>Creating modern, responsive web apps</li>
+                        <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        <li><span>Backend</span><br>Working with APIs and server-side logic</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="tools">
+                    <ul>
+                        <li><span>Languages</span><br>Java, Python, HTML, CSS, JavaScript</li>
+                        <li><span>Frameworks</span><br>Flask, Bootstrap</li>
+                        <li><span>Tools</span><br>Linux CLI, Git, AI tools, VS Code</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="interests">
+                    <ul>
+                        <li><span>Learning</span><br>Exploring new tech trends</li>
+                        <li><span>Creativity</span><br>UI/UX innovation</li>
+                        <li><span>Teamwork</span><br>Collaborating on impactful software projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>

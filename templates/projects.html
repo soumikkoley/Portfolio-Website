@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Soumik Koley</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        #projects {
+            padding: 80px 10%;
+            background-color: #0d0d0d;
+            color: #fff;
+        }
+        .projects-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .project-card {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 79, 0.2);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 0, 79, 0.4);
+        }
+        .project-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ff004f;
+        }
+        .project-desc {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .github-link {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff004f;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .github-link:hover {
+            background-color: #e60046;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <img src="{{ url_for('static', filename='images/logo.png.jpg') }}" class="logo">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="projects">
+        <h1 class="projects-title">My Projects</h1>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h2 class="project-title">🌤 Weather App</h2>
+                <p class="project-desc">
+                    A sleek weather forecast application using OpenWeatherMap API. Built with HTML, CSS, and JavaScript. Fetches live weather data and displays temperature, conditions, and icons.
+                </p>
+                <a href="https://github.com/yourusername/weather-app" class="github-link" target="_blank">View on GitHub</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h2 class="project-title">🧑‍💼 Portfolio Website</h2>
+                <p class="project-desc">
+                    Personal portfolio website showcasing my skills, projects, and contact information. Built with HTML, CSS, JavaScript, and Flask. Fully responsive and interactive design.
+                </p>
+                <a href="https://github.com/yourusername/portfolio-website" class="github-link" target="_blank">View on GitHub</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h2 class="project-title">🎓 Student Management System</h2>
+                <p class="project-desc">
+                    A CRUD-based Flask web application for managing student data. Includes add/edit/delete functionality, form validation, and SQLite database integration.
+                </p>
+                <a href="https://github.com/yourusername/student-management-system" class="github-link" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
